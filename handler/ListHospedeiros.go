@@ -11,8 +11,10 @@ func ListHospsHandler(ctx *gin.Context) {
 
 	Hosps := []schemas.Hospedeiro{}
 	db.Find(&Hosps)
+
+	
 	ctx.Header("Content-type", "application/json")
 	ctx.JSON(http.StatusOK, gin.H{
-		"data" : Hosps,
+		"data": Hosps,
 	})
 }
