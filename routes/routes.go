@@ -10,7 +10,7 @@ func IniciarRotas(route *gin.Engine) {
 	handler.IniciarHandler()
 	app := route.Group("/api")
 	{
-		app.GET("/hospedeiros", handler.ListHospsHandler)
+		app.GET("/hosps", handler.ListHospsHandler)
 		app.POST("/catalogar", handler.CatalogHospHandler)
 		app.GET("/analises", handler.ListToZombiesHandler) 
 	}
