@@ -6,11 +6,12 @@ import (
 )
 
 func ListToZombiesHandler(ctx *gin.Context) {
-
+    
 	Zombs := []schemas.Zombie{}
+	ctx.Header("Content-type", "application/json")
 	err := db.Find(&Zombs).Error
 	if err != nil {
-		ctx.Header("Content-type", "application/json")
+		
 		ctx.JSON(400, gin.H{
 			"error" : err.Error(),
 		})
@@ -18,7 +19,7 @@ func ListToZombiesHandler(ctx *gin.Context) {
 	}
 
 
-	ctx.Header("Content-type", "application/json")
+	
 	ctx.JSON(200, gin.H{
 		"data": Zombs,
 	})
