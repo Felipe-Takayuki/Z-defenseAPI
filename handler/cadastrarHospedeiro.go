@@ -8,7 +8,7 @@ import (
 func CatalogHospHandler(ctx *gin.Context) {
 	req := HospedeiroReq{}
 	ctx.BindJSON(&req)
-
+	ctx.Header("Content-type", "application/json")
 	hospedeiro := schemas.Hospedeiro{
 		Nome:           req.Nome,
 		Idade:          req.Idade,
@@ -20,12 +20,22 @@ func CatalogHospHandler(ctx *gin.Context) {
 		PraticaEsporte: req.PraticaQualEsporte,
 		JogoPrefer:     req.JogoPrefer,
 	}
-	zombie := ToZombie(req)
+	zombie := ToZombie(hospedeiro)
 	if req.Nome != "" && req.Idade >= 0 && req.Sexo != "" && req.Peso > 0 && req.Altura > 0 && req.TipSanguineo != "" && req.GtsMusical != "" && req.PraticaQualEsporte != "" && req.JogoPrefer != "" {
-		db.Create(&hospedeiro)
-		db.Create(&zombie)
-        imc := zombie.Peso / (zombie.Altura * zombie.Altura)
-		ctx.Header("Content-type", "application/json")
+		err := db.Create(&hospedeiro).Error; if err != nil {
+            ctx.JSON(400, gin.H{
+				"erro" : "erro db.Create(&hospedeiro)",
+			})
+			return 
+		}
+		err = db.Create(&zombie).Error; if err != nil {
+			ctx.JSON(400, gin.H{
+				"erro" : "erro db.Create(&zombie)",
+			})
+			return 
+		}
+
+		
 		ctx.JSON(200, gin.H{
 			"dados":   hospedeiro,
 			"analise" : schemas.Analise{
@@ -34,7 +44,6 @@ func CatalogHospHandler(ctx *gin.Context) {
 				Resistencia: zombie.Resistencia,
 				Classificao: zombie.Classificao,
 			},
-			"imc" : imc,
 			"mensagem": "Hospedeiro cadastrado e analisado",
 		})
 	} else {

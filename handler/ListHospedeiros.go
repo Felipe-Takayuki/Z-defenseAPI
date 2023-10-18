@@ -1,8 +1,6 @@
 package handler
 
 import (
-	"net/http"
-
 	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/schemas"
 	"github.com/gin-gonic/gin"
 )
@@ -10,11 +8,16 @@ import (
 func ListHospsHandler(ctx *gin.Context) {
 
 	Hosps := []schemas.Hospedeiro{}
-	db.Find(&Hosps)
-
-	
 	ctx.Header("Content-type", "application/json")
-	ctx.JSON(http.StatusOK, gin.H{
+	err := db.Find(&Hosps).Error
+	if err != nil {
+		ctx.JSON(400, gin.H{
+			"erro": "erro db.Find",
+		})
+		return
+	}
+
+	ctx.JSON(200, gin.H{
 		"data": Hosps,
 	})
 }
