@@ -38,6 +38,11 @@ func InitializeSQLite() (*gorm.DB, error) {
 		logger.ErrorF("sqlite automigration error: %v", err)
 		return nil, err
 	}  
+	err = db.AutoMigrate(&schemas.Zombie{}) 
+	if err != nil {
+		logger.ErrorF("sqlite automigration error: %v", err)
+		return nil, err
+	}
 	// Return the DB
 	return db, nil
 }

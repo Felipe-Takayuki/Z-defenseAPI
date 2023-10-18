@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/schemas"
-	utilsfuncs "github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/utilsFuncs"
+	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/utils"
 )
 
 type HospedeiroReq struct {
@@ -17,7 +17,7 @@ type HospedeiroReq struct {
 	JogoPrefer         string  `json:"jogoPreferido"`
 }
 
-func ToZombie(hosp schemas.Hospedeiro) schemas.Zombie {
+func ToZombie(hosp HospedeiroReq) schemas.Zombie {
 	zombie := schemas.Zombie{
 		Nome:               hosp.Nome,
 		Idade:              hosp.Idade,
@@ -26,14 +26,24 @@ func ToZombie(hosp schemas.Hospedeiro) schemas.Zombie {
 		Altura:             hosp.Altura,
 		TipSanguineo:       hosp.TipSanguineo,
 		GtsMusical:         hosp.GtsMusical,
-		PraticaQualEsporte: hosp.PraticaEsporte,
+		PraticaQualEsporte: hosp.PraticaQualEsporte,
 		JogoPrefer:         hosp.JogoPrefer,
 	}
 
-	zombie.Velocidade += utilsfuncs.CalcImc(zombie, utilsfuncs.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Velocidade + utilsfuncs.PraticantedeEsporte(zombie).Velocidade + utilsfuncs.ValidarIdade(zombie).Velocidade
-	zombie.Forca += utilsfuncs.CalcImc(zombie, utilsfuncs.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Forca + utilsfuncs.PraticantedeEsporte(zombie).Forca + utilsfuncs.ValidarIdade(zombie).Forca
-	zombie.Resistencia += utilsfuncs.CalcImc(zombie, utilsfuncs.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Resistencia + utilsfuncs.PraticantedeEsporte(zombie).Resistencia + utilsfuncs.ValidarIdade(zombie).Resistencia
-	zombie.Classificao = utilsfuncs.ClassificarZombie(zombie).Classificao
+	zombie.Velocidade += utils.CalcImc(zombie, utils.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Velocidade + utils.PraticantedeEsporte(zombie).Velocidade + utils.ValidarIdade(zombie).Velocidade
+	zombie.Forca += utils.CalcImc(zombie, utils.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Forca + utils.PraticantedeEsporte(zombie).Forca + utils.ValidarIdade(zombie).Forca
+	zombie.Resistencia += utils.CalcImc(zombie, utils.Imc{Peso: zombie.Peso, Altura: zombie.Altura, Sexo: zombie.Sexo}).Resistencia + utils.PraticantedeEsporte(zombie).Resistencia + utils.ValidarIdade(zombie).Resistencia
+	zombie.Classificao = utils.ClassificarZombie(zombie)
+    
+	if (zombie.Velocidade > 100) {
+		zombie.Velocidade = 100
+	} 
+	if (zombie.Forca > 100) {
+		zombie.Forca = 100
+	}
+	if(zombie.Resistencia > 100) {
+		zombie.Resistencia = 100 
+	}
 
 	return zombie
 
