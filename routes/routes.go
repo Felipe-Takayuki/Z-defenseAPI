@@ -12,7 +12,9 @@ func IniciarRotas(route *gin.Engine) {
 		app.GET("/hosps", handler.ListHospsHandler)
 		app.POST("/catalogar", handler.CatalogHospHandler)
 		app.GET("/analises", handler.ListToZombiesHandler)
-		app.GET("/analiseHosp", handler.AnaliseHosp)
-		app.GET("/filtro", handler.FiltrarAnalise)
+		app.GET("/analisarHosp", handler.AnaliseHosp)
+		app.GET("/filtrar", handler.FiltrarAnalise)
+		app.DELETE("/deletarHops", handler.DeleteHosp)
+		app.PUT("/atualizarHosp", handler.AtualizarHosp)
 	}
 }
