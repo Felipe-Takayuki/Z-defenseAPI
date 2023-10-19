@@ -34,7 +34,6 @@ func FiltrarAnalise(ctx *gin.Context) {
 	}).Find(&zombie).Error; if err != nil {
 	   ctx.JSON(400, gin.H{
 		"erro" : "erro na busca por esse filtro",
-		"teste" : classificacao,
 	   })
 	   return 
 	}
