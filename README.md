@@ -25,7 +25,7 @@ A minha solução para a etapa bônus(problemas 1 e 2) é uma API feita usando *
 
 comandos:
 
-1. **`git clone  [https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC.git](https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC.git)`** 
+1. **`git clone  https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC.git'**
 2. **`git cd [sistema-de-defesa-dsinCC](https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC)`**
 3. **`go mod download`** 
 4. **`go run main.go`**
