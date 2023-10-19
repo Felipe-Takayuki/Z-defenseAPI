@@ -36,7 +36,7 @@ comandos:
 
 endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**       
 
-`**/catalogar : POST**`
+`**/catalogar : POST`
 
 - Cadastro dos potenciais hospedeiro ao banco de dados + analise dos mesmos. As informações são passadas via `json`
 
@@ -54,13 +54,13 @@ endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**
 }
 ```
 
-`**/deletarHosp?id=<id> : DELETE**`
+`**/deletarHosp?id=<id> : DELETE`
 
 - Deleta potencial hospedeiro e analise pelo `id`
     
     
 
-`**/atualizarHosp?id=<id> : PUT**`
+`**/atualizarHosp?id=<id> : PUT`
 
 - Atualiza potencial hospedeiro pelo id via `json` passando os parâmetros que devem ser alterados.
 
