@@ -36,7 +36,7 @@ comandos:
 
 endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**       
 
-`**/catalogar : POST`
+`/catalogar : POST`
 
 - Cadastro dos potenciais hospedeiro ao banco de dados + analise dos mesmos. As informações são passadas via `json`
 
@@ -60,11 +60,11 @@ endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**
     
     
 
-`**/atualizarHosp?id=<id> : PUT`
+**`/atualizarHosp?id=<id> : PUT`**
 
 - Atualiza potencial hospedeiro pelo id via `json` passando os parâmetros que devem ser alterados.
 
-`**/analiseHosp?id=<id> : GET**`
+**`/analiseHosp?id=<id> : GET`**
 
 - Analisa o potencial hospedeiro buscando o pelo `id` e retorna o nível provável do hospedeiro como zumbi.
 
