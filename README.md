@@ -2,6 +2,15 @@
 
 A minha solução é um API que foi feita em GoLang utilizando algumas bibliotecas como Gin e Gorm. 
 
+
+## **Tecnologias usadas**
+
+---
+
+![docker](IconTec/docker.png)
+
+![go](IconTec/go.png)
+
 ---
 
 ## Inicialização
