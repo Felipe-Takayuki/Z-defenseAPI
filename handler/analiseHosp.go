@@ -11,14 +11,14 @@ func AnaliseHosp(ctx *gin.Context) {
 	id := ctx.Query("id")
 	if id == "" {
 		ctx.JSON(400, gin.H{
-			"mensage" : "o id não pode ser nulo",
+			"erro" : "o id não pode ser nulo",
 		})
 		return 
 	}
 
 	err := db.First(&Hospedeiro, id).Error; if err != nil {
          ctx.JSON(400, gin.H{
-			"mensage" : err.Error(),
+			"erro" : "erro ao tentar encontrar este hospedeiro",
 		 })
 		 return 
 	}

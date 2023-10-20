@@ -21,6 +21,6 @@ func ListToZombiesHandler(ctx *gin.Context) {
 
 	
 	ctx.JSON(200, gin.H{
-		"data": Zombs,
+		"analises": Zombs,
 	})
 }
