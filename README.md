@@ -62,7 +62,7 @@ endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**
 
 - Mostra uma lista com todos potenciais hospedeiros analisados.
 
-`**/hosps : GET`**    
+`/hosps : GET`    
 
 - Mostra uma lista dos potenciais hospedeiros já cadastrados.
 
