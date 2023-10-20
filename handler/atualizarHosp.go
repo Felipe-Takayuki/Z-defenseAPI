@@ -32,7 +32,7 @@ func AtualizarHosp(ctx *gin.Context) {
 	if req.Nome != "" {
 		hosp.Nome = req.Nome
 	}
-	if req.Idade >= 0 {
+	if req.Idade > 0 {
 		hosp.Idade = req.Idade
 	}
 	if req.Sexo != "" {
@@ -67,7 +67,7 @@ func AtualizarHosp(ctx *gin.Context) {
 	analise.Resistencia = zombieAtulzar.Resistencia
 	analise.Classificao = zombieAtulzar.Classificao
     
-	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "B-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" {
+	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "b-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" || sang == "" {
 		analise.TipSanguineo = req.TipSanguineo
 	} else {
 		ctx.JSON(400, gin.H{

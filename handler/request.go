@@ -11,10 +11,10 @@ type HospedeiroReq struct {
 	Sexo               string  `json:"sexo"`
 	Peso               float64 `json:"peso"`
 	Altura             float64 `json:"altura"`
-	TipSanguineo       string  `json:"tipoSanguineo"`
-	GtsMusical         string  `json:"gostoMusical"`
-	PraticaQualEsporte string  `json:"esporte"`
-	JogoPrefer         string  `json:"jogoPreferido"`
+	TipSanguineo       string  `json:"tipo-sanguineo"`
+	GtsMusical         string  `json:"gosto-musical"`
+	PraticaQualEsporte string  `json:"pratica-esporte"`
+	JogoPrefer         string  `json:"jogo-preferido"`
 }
 
 
@@ -45,7 +45,15 @@ func ToZombie(hosp schemas.Hospedeiro) schemas.Zombie {
 	if(zombie.Resistencia > 100) {
 		zombie.Resistencia = 100 
 	}
-
+	if (zombie.Velocidade < 0) {
+		zombie.Velocidade = 2
+	}
+	if (zombie.Forca < 0) {
+		zombie.Forca = 2
+	}
+	if (zombie.Resistencia < 0){
+		zombie.Resistencia = 2
+	}
 	return zombie
 
 }

@@ -24,7 +24,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 	}
 	zombie := ToZombie(hospedeiro)
 	sang := strings.ToLower(req.TipSanguineo)
-	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "B-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" {
+	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "b-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" {
 		hospedeiro.TipSanguineo = req.TipSanguineo
 	} else {
 		ctx.JSON(400, gin.H{
