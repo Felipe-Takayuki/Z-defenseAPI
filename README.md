@@ -26,7 +26,7 @@ para dentro do mesmo
 
 endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**       
 
-`**/catalogar : POST**`
+`/catalogar : POST`
 
 - Cadastro dos potenciais hospedeiro+ analise dos mesmos. As informações são passadas dvia `json`
 
