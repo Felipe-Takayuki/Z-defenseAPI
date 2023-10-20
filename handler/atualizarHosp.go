@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/schemas"
+	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -47,8 +48,8 @@ func AtualizarHosp(ctx *gin.Context) {
 		hosp.Altura = req.Altura
 	}
 	sang := strings.ToLower(req.TipSanguineo)
-	
-	if  req.TipSanguineo != "" {
+
+	if req.TipSanguineo != "" {
 		hosp.GtsMusical = req.GtsMusical
 	}
 	if req.GtsMusical != "" {
@@ -60,13 +61,13 @@ func AtualizarHosp(ctx *gin.Context) {
 	if req.JogoPrefer != "" {
 		hosp.JogoPrefer = req.JogoPrefer
 	}
- 
-	zombieAtulzar = ToZombie(hosp)
+
+	zombieAtulzar = utils.ToZombie(hosp)
 	analise.Forca = zombieAtulzar.Forca
 	analise.Velocidade = zombieAtulzar.Velocidade
 	analise.Resistencia = zombieAtulzar.Resistencia
 	analise.Classificao = zombieAtulzar.Classificao
-    
+
 	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "b-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" || sang == "" {
 		analise.TipSanguineo = req.TipSanguineo
 	} else {

@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/schemas"
+	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,7 +23,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 		PraticaEsporte: req.PraticaQualEsporte,
 		JogoPrefer:     req.JogoPrefer,
 	}
-	zombie := ToZombie(hospedeiro)
+	zombie := utils.ToZombie(hospedeiro)
 	sang := strings.ToLower(req.TipSanguineo)
 	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "b-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" {
 		hospedeiro.TipSanguineo = req.TipSanguineo
@@ -32,7 +33,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 		})
 		return
 	}
-	
+
 	if req.Nome != "" && req.Idade >= 0 && req.Sexo != "" && req.Peso > 0 && req.Altura > 0 && req.TipSanguineo != "" && req.GtsMusical != "" && req.PraticaQualEsporte != "" && req.JogoPrefer != "" {
 		err := db.Create(&hospedeiro).Error
 		if err != nil {
