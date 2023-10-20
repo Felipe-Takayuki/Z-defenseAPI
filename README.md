@@ -1,6 +1,6 @@
 # Z-defenseAPI
 
-A minha solução é um API que foi feita em GoLang utilizando algumas bibliotecas como Gin e Gorm. 
+A minha solução para a etapa bônus do Coder Challenge é uma API que basicamente analisa potenciais hospedeiros para zumbis e ela foi feita em GoLang. 
 
 ---
 
