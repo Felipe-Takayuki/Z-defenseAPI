@@ -1,6 +1,8 @@
 package handler
 
 import (
+	"strings"
+
 	"github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC/schemas"
 	"github.com/gin-gonic/gin"
 )
@@ -21,26 +23,37 @@ func CatalogHospHandler(ctx *gin.Context) {
 		JogoPrefer:     req.JogoPrefer,
 	}
 	zombie := ToZombie(hospedeiro)
+	sang := strings.ToLower(req.TipSanguineo)
+	if sang == "a+" || sang == "a-" || sang == "b+" || sang == "B-" || sang == "o+" || sang == "o-" || sang == "ab+" || sang == "ab-" {
+		hospedeiro.TipSanguineo = req.TipSanguineo
+	} else {
+		ctx.JSON(400, gin.H{
+			"erro": "tipo sanguíneo desconhecido",
+		})
+		return
+	}
+	
 	if req.Nome != "" && req.Idade >= 0 && req.Sexo != "" && req.Peso > 0 && req.Altura > 0 && req.TipSanguineo != "" && req.GtsMusical != "" && req.PraticaQualEsporte != "" && req.JogoPrefer != "" {
-		err := db.Create(&hospedeiro).Error; if err != nil {
-            ctx.JSON(400, gin.H{
-				"erro" : "erro ao tentar cadastrar hospedeiro",
-			})
-			return 
-		}
-		err = db.Create(&zombie).Error; if err != nil {
+		err := db.Create(&hospedeiro).Error
+		if err != nil {
 			ctx.JSON(400, gin.H{
-				"erro" : "erro db.Create(&zombie)",
+				"erro": "erro ao tentar cadastrar hospedeiro",
 			})
-			return 
+			return
 		}
-           
-		
+		err = db.Create(&zombie).Error
+		if err != nil {
+			ctx.JSON(400, gin.H{
+				"erro": "erro db.Create(&zombie)",
+			})
+			return
+		}
+
 		ctx.JSON(200, gin.H{
-			"dados":   hospedeiro,
-			"analise" : schemas.Analise{
-				Forca: zombie.Forca,
-				Velocidade: zombie.Velocidade,
+			"dados": hospedeiro,
+			"analise": schemas.Analise{
+				Forca:       zombie.Forca,
+				Velocidade:  zombie.Velocidade,
 				Resistencia: zombie.Resistencia,
 				Classificao: zombie.Classificao,
 			},
@@ -49,7 +62,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 	} else {
 		ctx.Header("Content-type", "application/json")
 		ctx.JSON(400, gin.H{
-			"Error": "Nenhuma informação deve ser nula",
+			"erro": "Nenhuma informação deve ser nula",
 		})
 	}
 
