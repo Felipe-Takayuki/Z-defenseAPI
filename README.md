@@ -8,7 +8,7 @@ A minha solução é um API que foi feita em GoLang utilizando algumas bibliotec
 
 para inicializar o projeto primeiro entre no diretório da API e rode os seguintes comandos tendo o Docker instalado na maquina caso não tenha faça  o download em [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-`**git clone https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC**`
+**`git clone https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC`**
 
 `docker build --tag z` 
 
