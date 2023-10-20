@@ -2,6 +2,13 @@
 
 A minha solução é um API que foi feita em GoLang utilizando algumas bibliotecas como Gin e Gorm. 
 
+## **Tecnologias usadas**
+---
+
+![Untitled](Z-defenseAPI%20b220f06775ce4749a40cb9aa0c24c6aa/Untitled.png)
+
+![Untitled](Z-defenseAPI%20b220f06775ce4749a40cb9aa0c24c6aa/Untitled%201.png)
+
 ---
 
 ## Inicialização
