@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ef3414cf-6178-4df8-b00f-1f20f87289eb",
+		"_postman_id": "641fc83e-95ae-41d2-a53c-7185ef97e294",
 		"name": "z-defenderAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30507036"
+		"_exporter_id": "30657216"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Antonildo\",\r\n    \"idade\": 90,\r\n    \"sexo\": \"Masculino\",\r\n    \"peso\": 70,\r\n    \"altura\": 1.70,\r\n    \"tipoSanguineo\": \"A\",\r\n    \"gostoMusical\": \"Rock\",\r\n    \"esporte\": \"nenhum\",\r\n    \"jogoPreferido\": \"nenhum\"\r\n}",
+					"raw": "{\r\n    \"nome\": \"Antonildo\",\r\n    \"idade\": 90,\r\n    \"sexo\": \"Masculino\",\r\n    \"peso\": 70,\r\n    \"altura\": 1.70,\r\n    \"tipo-sanguineo\": \"a+\",\r\n    \"gosto-musical\": \"Rock\",\r\n    \"pratica-esporte\": \"nenhum\",\r\n    \"jogo-preferido\": \"nenhum\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,7 +107,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/filtrar?Classificacao=3",
+					"raw": "http://localhost:8080/api/filtrar?classificacao=3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -119,7 +119,7 @@
 					],
 					"query": [
 						{
-							"key": "Classificacao",
+							"key": "classificacao",
 							"value": "3"
 						}
 					]
@@ -134,7 +134,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Nome\" : \"Antonilda\",\r\n    \"Sexo\" : \"Feminino\",\r\n    \"Peso\" : 100\r\n}",
+					"raw": "{\r\n    \"nome\" : \"Antonilda\",\r\n    \"sexo\" : \"Feminino\",\r\n    \"peso\" : 100\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
