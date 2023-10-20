@@ -6,12 +6,12 @@ import (
 )
 
 var (
-    logger *config.Logger
+    
 	db *gorm.DB
 )
 
 
  func IniciarHandler(){
-	logger = config.GetLogger("handler")
+	
 	db = config.GetSQLite()
  }

@@ -13,7 +13,7 @@ func ListToZombiesHandler(ctx *gin.Context) {
 	if err != nil {
 		
 		ctx.JSON(400, gin.H{
-			"error" : err.Error(),
+			"error" : "erro para encontrar usúario",
 		})
 		return 
 	}

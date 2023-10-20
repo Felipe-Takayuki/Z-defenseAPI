@@ -7,7 +7,7 @@ import (
 )
 
 func PraticantedeEsporte(zombie schemas.Zombie) Pontos {
-	esporte := strings.ToLower(zombie.PraticaQualEsporte)  
+	esporte := strings.ToLower(zombie.PraticaEsporte)  
     if esporte != "esport" &&  esporte != "nenhum" {
 		zombie.Forca +=25
 		zombie.Velocidade += 22

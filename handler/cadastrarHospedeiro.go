@@ -24,7 +24,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 	if req.Nome != "" && req.Idade >= 0 && req.Sexo != "" && req.Peso > 0 && req.Altura > 0 && req.TipSanguineo != "" && req.GtsMusical != "" && req.PraticaQualEsporte != "" && req.JogoPrefer != "" {
 		err := db.Create(&hospedeiro).Error; if err != nil {
             ctx.JSON(400, gin.H{
-				"erro" : "erro db.Create(&hospedeiro)",
+				"erro" : "erro ao tentar cadastrar hospedeiro",
 			})
 			return 
 		}
@@ -34,7 +34,7 @@ func CatalogHospHandler(ctx *gin.Context) {
 			})
 			return 
 		}
-
+           
 		
 		ctx.JSON(200, gin.H{
 			"dados":   hospedeiro,

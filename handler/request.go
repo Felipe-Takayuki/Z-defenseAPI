@@ -17,6 +17,7 @@ type HospedeiroReq struct {
 	JogoPrefer         string  `json:"jogoPreferido"`
 }
 
+
 func ToZombie(hosp schemas.Hospedeiro) schemas.Zombie {
 	zombie := schemas.Zombie{
 		Nome:               hosp.Nome,
@@ -26,7 +27,7 @@ func ToZombie(hosp schemas.Hospedeiro) schemas.Zombie {
 		Altura:             hosp.Altura,
 		TipSanguineo:       hosp.TipSanguineo,
 		GtsMusical:         hosp.GtsMusical,
-		PraticaQualEsporte: hosp.PraticaEsporte,
+		PraticaEsporte: hosp.PraticaEsporte,
 		JogoPrefer:         hosp.JogoPrefer,
 	}
 
