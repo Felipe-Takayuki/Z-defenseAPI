@@ -14,6 +14,8 @@ para inicializar o projeto primeiro entre no diretório da API e rode os seguint
 
 `docker run -p 8080:8080 z-defense`  
 
+---
+
 ## Como testar a API ?
 
 Recomendo que utilize o aplicativo **postman** e importe este arquivo:
