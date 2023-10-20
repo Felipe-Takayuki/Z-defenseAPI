@@ -10,7 +10,7 @@ para inicializar o projeto primeiro entre no diretório da API e rode os seguint
 
 **`git clone https://github.com/Felipe-Takayuki/sistema-de-defesa-dsinCC`**
 
-`cd sistema-de-defesa-dsinCC`
+`cd Z-defenseAPI`
 
 `docker build --tag z-defense .` 
 
