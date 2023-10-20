@@ -35,7 +35,7 @@ endereço usado: **`http://localhost:8080/api`**
   "nome"   : //<string>,
   "idade"  : //<int>,
   "sexo"   : //<string>,
-	"peso"   : //<float>,
+  "peso"   : //<float>,
   "altura" : //<float>,
   "tipo-sanguineo" : //<string>,
   "gosto-musical"  : //<string>,
