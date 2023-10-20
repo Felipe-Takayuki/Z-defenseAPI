@@ -19,8 +19,8 @@ para inicializar o projeto primeiro entre no diretório da API e rode os seguint
 ## Como testar a API ?
 
 Recomendo que utilize o aplicativo **postman** e importe este arquivo:
-
-para dentro do mesmo
+"z-defenderAPI.postman_collection.json"
+para dentro do mesmo caso não tenha baixe em: https://www.postman.com/downloads/
 
 ---
 
