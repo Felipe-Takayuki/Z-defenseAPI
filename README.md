@@ -44,17 +44,17 @@ endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**
 }
 ```
 
-`**/deletarHosp?id=<id> : DELETE**`
+`/deletarHosp?id=<id> : DELETE`
 
 - Deleta potencial hospedeiro e analise pelo `id`
     
     
 
-`**/atualizarHosp?id=<id> : PUT**`
+`/atualizarHosp?id=<id> : PUT`
 
 - Atualiza potencial hospedeiro pelo `id` via `json` passando o ou os parâmetros que devem ser alterados.
 
-`**/analiseHosp?id=<id> : GET**`
+`/analiseHosp?id=<id> : GET`
 
 - Analisa o potencial hospedeiro buscando o pelo `id` e retorna o nível do hospedeiro como zumbi.
 
@@ -66,7 +66,7 @@ endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**
 
 - Mostra uma lista dos potenciais hospedeiros já cadastrados.
 
-`**/filtrar?classificacao=<numero> : GET`** 
+`/filtrar?classificacao=<numero> : GET`
 
 - Lista as analises de acordo com a classificação sendo elas representadas por números de 1 a 4 para facilitar o uso da API
 
