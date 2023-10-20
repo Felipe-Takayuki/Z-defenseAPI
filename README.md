@@ -24,7 +24,7 @@ para dentro do mesmo
 
 ## **Rotas**
 
-endereço usado: [`**http://localhost:8080](http://localhost:8080)/api`**       
+endereço usado: **`http://localhost:8080/api`**
 
 `/catalogar : POST`
 
