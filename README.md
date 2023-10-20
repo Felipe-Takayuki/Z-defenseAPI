@@ -60,7 +60,7 @@ endereço usado: **`http://localhost:8080/api`**
 
 `/analiseHosp?id=<id> : GET`
 
-- Analisa o potencial hospedeiro buscando o pelo `id` e retorna o nível do hospedeiro como zumbi.
+- Analisa o potencial hospedeiro e analise buscando o pelo `id` e retorna o nível do hospedeiro como zumbi.
 
 **`/analises: GET`**
 
