@@ -47,7 +47,7 @@ endereço usado: **`http://localhost:8080/api`**
   "altura" : //<float>,
   "tipo-sanguineo" : //<string>,
   "gosto-musical"  : //<string>,
-  "qual-esporte" : //<string>,
+  "pratica-esporte" : //<esporte string>,
   "jogo-preferido" : //<string>
 }
 ```
