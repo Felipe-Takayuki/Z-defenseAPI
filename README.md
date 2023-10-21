@@ -26,7 +26,7 @@ para dentro do app caso não tenha baixe em: https://www.postman.com/downloads/
 
 ---
 
-### video mostrando esses passos:  **https://youtu.be/iLH7_SQOi2Y?si=gtpXXxU2QlSH-mHF**
+### video mostrando esses passos e mostrando a API funcionando:  **https://youtu.be/iLH7_SQOi2Y?si=gtpXXxU2QlSH-mHF** ASSISTA
 
 
 --- 
